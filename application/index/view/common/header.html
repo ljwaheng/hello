@@ -1,0 +1,9 @@
+<div class="header">
+    <div class="top"><!-- <a href="{:url('index/index')}">中文</a>|<a href="list.php?catid=43">English</a> --></div>
+    <div class="nav">      
+      <a href="list.php?catid=32" class="mlist"></a>
+      {volist name="cateres" id="vo"}
+         <div class="llist"></div><a href="{:url('Lists/index',array('cateid'=>$vo['id']))}" class="mlist">{$vo.catename}</a>
+      {/volist}
+    </div>
+</div>

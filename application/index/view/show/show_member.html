@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>成员介绍</title>
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/style/base.css">
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/style/style.css">
+		<script language="JavaScript" src="__PUBLIC__/images/config.js"></script>
+		<script language="JavaScript" src="__PUBLIC__/images/js/jquery-1.7.2.min.js"></script>
+		<script language="JavaScript" src="__PUBLIC__/images/js/css.js"></script>
+		<script language="JavaScript" src="__PUBLIC__/images/js/common.js"></script>
+		<script language="JavaScript" src="__PUBLIC__/images/js/login.js"></script>
+		<script language="JavaScript" src="__PUBLIC__/images/js/jquery-validate.js"></script>
+	</head>
+	<body>
+
+		{include file="common/header"/}
+
+
+		<div class="mid">
+			<div class="left">
+			<div class="lmune">
+			        <div class="title"><a href="javascript:void(0)">成员介绍</a></div>
+			         <div class="mulist">
+			<ul>
+			<li><a href="list.php?catid=36&typeid=1">骨干教师</a></li>
+			<li><a href="list.php?catid=36&typeid=2">在读学生</a></li>
+			<li><a href="list.php?catid=36&typeid=3">毕业学生</a></li>
+			           
+			</ul>
+			         </div>
+			      </div>
+			</div>
+			<div class="minh"></div>
+			<div class="right">
+				<div id="content">
+					<div style="padding:10px;">
+					  <div class="clist">
+						<a href="javascript:void(0)" class="tt">个人资料</a>
+							<div class="clf"></div>
+							<div style="width: 450px; float: left;padding-right:10px;">
+								<div class="sleft">&nbsp;&nbsp;姓名:&nbsp;&nbsp;{$member.name}&nbsp;<a href="####" target="_blank">(点此进入个人主页)</a></div>
+								<div class="sright">职称:&nbsp;&nbsp;{$member.position}</div>
+								<div class="sleft">&nbsp;&nbsp;电话:&nbsp;&nbsp;{$member.phone}&nbsp;</div>
+								<div class="sright">传真:&nbsp;&nbsp;{$member.fax}</div>
+								<div class="sleft">&nbsp;&nbsp;E-mail:&nbsp;&nbsp;{$member.email}&nbsp;</div>
+								<div class="sright">邮编:&nbsp;&nbsp;{$member.postcode}</div>
+								<div class="slong">&nbsp;&nbsp;地址:&nbsp;&nbsp;{$member.location}</div>
+							</div>
+							<div style="width: 110px; float: left"><img src="__IMG__{$member.pic}" width="100"  alt="{$member.name}" />
+							</div>
+						<div class="clf">&nbsp;</div>
+					  </div>
+
+					  <div class="clist">
+						<a href="javascript:void(0)" class="tt">个人介绍</a>
+						<div id="endtext">
+							<div class="clf"></div>
+							<p><br/>
+								<span style="color: #0000ff"><span style="font-size: 22px"><strong>工作简历<br />
+								</strong></span></span>&nbsp;<br />
+								<span style="font-size: 16px">
+								{$member.resume}
+								</span>&nbsp;&nbsp;&nbsp;&nbsp;<br />
+								&nbsp;<br />
+									<span style="font-size: 22px"><span style="color: #0000ff"><strong>研究方向<br />
+									</strong></span></span>&nbsp;&nbsp;<br />
+									<span style="font-size: 16px">&nbsp;&nbsp;&middot;  {$member.direction}&nbsp;</span>&nbsp;<br />
+									&nbsp;&nbsp;<br />
+								<span style="font-size: 22px"><span style="color: #0000ff"><strong>获得荣誉<br />
+								</strong></span></span>&nbsp;&nbsp;&nbsp;<br />
+								<span style="font-size: 16px">&middot;{$member.honor}<br />
+								</span>&nbsp;&nbsp;<br />
+								&nbsp;&nbsp;<br />
+								<span style="font-size: 22px"><span style="color: #0000ff"><strong>社会兼职<br />
+								</strong></span></span>&nbsp;&nbsp;<br />
+								&nbsp;<span style="font-size: 16px">&middot;{$member.project}</span>
+							</p>
+							<p>&nbsp;<br />
+								<span style="font-size: 22px"><span style="color: #0000ff"><strong>主讲课程<br />
+								</strong></span></span>&nbsp;<br />
+								<span style="font-size: 16px">&middot;{$member.course}<br/></span>
+							</p>
+						</div>
+						<div class="clf">&nbsp;</div>
+					  </div>
+					</div>
+				</div>
+			</div>
+			<div class="clf"></div>
+		</div>
+		<script language="JavaScript" src="count.php?contentid=203"></script>
+		{include file="common/foot"/}
+	</body>
+</html>

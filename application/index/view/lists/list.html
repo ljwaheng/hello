@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$catename.catename}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/style/base.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/style/style.css">
+<script language="JavaScript" src="__PUBLIC__/images/config.js"></script>
+<script language="JavaScript" src="__PUBLIC__/images/js/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="__PUBLIC__/images/js/css.js"></script>
+<script language="JavaScript" src="__PUBLIC__/images/js/common.js"></script>
+<script language="JavaScript" src="__PUBLIC__/images/js/login.js"></script>
+<script language="JavaScript" src="__PUBLIC__/images/js/jquery-validate.js"></script>
+</head>
+<body>
+
+{include file="common/header"/}
+
+<div class="mid">
+    <div class="left">
+    <div class="lmune">
+        <div class="title"><a href="">最新文章</a></div>
+         <div class="mulist">
+         {volist name="newarticle" id="vo"}
+        	<ul>           
+          <li><a href="{:url('show/index',array('artid'=>$vo['id']))}" target="_blank" title="第一条文章">{$vo.title}</a></li>
+          </ul>
+          {/volist}
+         </div>
+      </div>
+
+      <div class="lmune">
+        <div class="title"><a href="javascript:void(0)">相关链接</a></div>
+         <div class="mulist">
+         {volist name="urls" id="vo"}
+        	<ul>           
+             <li><a href="{$vo.url}" target="_blank" title="" onclick="$.get('link/count.php?linkid=2')" >{$vo.title}</a> </li>
+            </ul>
+            {/volist}
+         </div>
+      </div>
+     </div>    
+    <div class="right">
+      <div id="content">
+<div style="padding:10px;">
+     <div id="mblock_add" class="block_add" pageid="catid_32" blockno="1" style="display:none;">添加碎片</div>
+<div class="clist">
+<a name="c15" class="tt">小组简介</a>
+<div id="block_15" class="cont"></div>
+<div id="float_div_15" class="block_float_div jqModal" style="display:none" blockid="15" ></div>
+</div>
+    </div>
+  </div>
+
+    </div>
+    <div class="clf"></div>
+  </div>
+
+{include file="common/foot"/}
+</body>
+</html>

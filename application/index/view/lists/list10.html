@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$catename.catename}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/style/base.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/style/style.css">
+<script language="JavaScript" src="__PUBLIC__/images/config.js"></script>
+<script language="JavaScript" src="__PUBLIC__/images/js/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="__PUBLIC__/images/js/css.js"></script>
+<script language="JavaScript" src="__PUBLIC__/images/js/common.js"></script>
+<script language="JavaScript" src="__PUBLIC__/images/js/login.js"></script>
+<script language="JavaScript" src="__PUBLIC__/images/js/jquery-validate.js"></script>
+</head>
+<body>
+
+{include file="common/header"/}
+
+<div class="mid">
+    <div class="left">
+      <div class="lmune">
+        <div class="title"><a href="javascript:void(0)">{$catename.catename}</a></div>
+         <div class="mulist">
+        	<ul>
+          <li><a href="###">活动</a></li>
+         </ul>
+         </div>
+      </div>
+     </div>
+    
+    <div class="minh"></div>
+    
+    <div class="right">
+        <div id="content">
+          <div style="padding:10px;">
+          <div class="clist">
+          <a name="c13" class="tt" style="font-size:20px">课外活动</a>
+          <div id="block_13" class="cont">
+            
+          </div>
+          <div id="float_div_13" class="block_float_div jqModal" style="display:none" blockid="13" ></div>
+          </div>
+            {volist name="activity" id="vo"}
+            <div class="clist">
+              <div id="block_14" class="cont">
+              <table border="0" cellspacing="0" cellpadding="0" width="580">
+                  <tbody>
+                      <tr>
+                          <td>
+                           <a href="{:url('show/index',array('artid'=>$vo['id']))}" target="_blank"><img src="__IMG__{$vo.pic}" width="200" height="150" alt="{$vo.title}" /></a><br /><a href="{:url('show/index',array('artid'=>$vo['id']))}" target="_blank"><span style="font-size: 15px">{$vo.title}</span></a>
+                           </td>
+                      </tr>
+                  </tbody>
+               </table>
+              </div>
+            </div>
+            {/volist}
+        </div>
+    </div>
+  </div>
+    <div class="clf"></div>
+</div>
+
+{include file="common/foot"/}
+</body>
+</html>

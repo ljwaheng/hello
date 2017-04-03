@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+     <head>
+    	<meta charset="utf-8">
+        <title>add</title>
+        <meta name="description" content="Dashboard">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!--Basic Styles-->
+        <link href="__PUBLIC__/style/bootstrap.css" rel="stylesheet">
+        <link href="__PUBLIC__/style/font-awesome.css" rel="stylesheet">
+        <link href="__PUBLIC__/style/weather-icons.css" rel="stylesheet">
+
+        <!--Beyond styles-->
+        <link id="beyond-link" href="__PUBLIC__/style/beyond.css" rel="stylesheet" type="text/css">
+        <link href="__PUBLIC__/style/demo.css" rel="stylesheet">
+        <link href="__PUBLIC__/style/typicons.css" rel="stylesheet">
+        <link href="__PUBLIC__/style/animate.css" rel="stylesheet">
+        
+    <script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.all.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/ueditor/lang/zh-cn/zh-cn.js"></script>
+        
+     </head>
+    <body>
+    	<!-- 头部 -->
+    	{include file="common/top"}
+    	<!-- /头部 -->
+    	
+    	<div class="main-container container-fluid">
+    		<div class="page-container">
+    			<!-- Page Sidebar -->
+                {include file="common/left"}
+                <!-- /Page Sidebar -->
+                <!-- Page Content -->
+                <div class="page-content">
+                    <!-- Page Breadcrumb -->
+                    <div class="page-breadcrumbs">
+                      <ul class="breadcrumb">
+                        <li>
+                          <a href="#">系统</a></li>
+                        <li>
+                          <a href="{:url('member/lists')}">成员管理</a></li>
+                        <li class="active">
+                        <a href="{:url('member/edit')}">修改成员</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- /Page Breadcrumb -->
+
+                    <!-- Page Body -->
+                    <div class="page-body">
+                        
+                        <div class="row">
+                            <div class="col-lg-12 col-sm-12 col-xs-12">
+                                <div class="widget">
+                                    <div class="widget-header bordered-bottom bordered-blue">
+                                        <span class="widget-caption">修改成员</span>
+                                    </div>
+                                    <div class="widget-body">
+                                        <div id="horizontal-form">
+                                            <form class="form-horizontal" role="form" action="{:url('member/sub_edit')}" enctype="multipart/form-data" method="post">
+                                            <input type="hidden" name="id" value="{$edit_Member.id}">
+                                                 <div class="form-group">
+                                                    <label for="username" class="col-sm-2 control-label no-padding-right">名字
+                                                    </label>
+                                                    <div class="col-sm-6">
+                                                        <input class="form-control" id="title" placeholder="" name="name" value="{$edit_Member.name}" required="" type="text">
+                                                    </div>
+                                                    <p class="help-block col-sm-4 red">* 必填</p>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="username" class="col-sm-2 control-label no-padding-right">职称
+                                                    </label>
+                                                    <div class="col-sm-6">
+                                                        <input class="form-control" id="password" placeholder="" name="position" value="{$edit_Member.position}" type="text">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="username" class="col-sm-2 control-label no-padding-right">联系方式
+                                                    </label>
+                                                    <div class="col-sm-6">
+                                                        <input class="form-control" id="password" placeholder="" name="phone" value="{$edit_Member.position}" type="text">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="group_id" class="col-sm-2 control-label no-padding-right">照片</label>
+                                                    {if condition="$edit_Member['pic'] neq ''"}
+                                                    <img src="__IMG__{$edit_Member.pic}" height="50">
+                                                    {else /}
+                                                        <span>暂无头像</span>
+                                                    {/if}
+                                                    <div class="col-sm-6">
+                                                    <input id="pic" placeholder="" name="pic"  type="file">
+                                                    </div>
+                                                 </div>
+
+                                                 <div class="form-group">
+                                                    <label for="username" class="col-sm-2 control-label no-padding-right">传真
+                                                    </label>
+                                                    <div class="col-sm-6">
+                                                        <input class="form-control" id="password" placeholder="" name="fax" value="{$edit_Member.fax}" type="text">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="username" class="col-sm-2 control-label no-padding-right">邮箱
+                                                    </label>
+                                                    <div class="col-sm-6">
+                                                        <input class="form-control" id="password" placeholder="" name="email" value="{$edit_Member.email}" type="text">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="username" class="col-sm-2 control-label no-padding-right">地址
+                                                    </label>
+                                                    <div class="col-sm-6">
+                                                        <input class="form-control" id="password" placeholder="" name="location" value="{$edit_Member.location}" type="text">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="username" class="col-sm-2 control-label no-padding-right">邮编
+                                                    </label>
+                                                    <div class="col-sm-6">
+                                                        <input class="form-control" id="password" placeholder="" name="postcode" value="{$edit_Member.postcode}" type="text">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="username" class="col-sm-2 control-label no-padding-right">简历
+                                                    </label>
+                                                    <div class="col-sm-6">
+                                                        <textarea name="resume"  id="resume"></textarea>
+                                                   </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="username" class="col-sm-2 control-label no-padding-right">研究方向
+                                                    </label>
+                                                    <div class="col-sm-6">
+                                                        <textarea name="direction" class="form-control" id="direction"></textarea>
+                                                   </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="username" class="col-sm-2 control-label no-padding-right">学术成果
+                                                    </label>
+                                                    <div class="col-sm-6">
+                                                        <textarea name="honor" class="form-control" id="honor"></textarea>
+                                                   </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="username" class="col-sm-2 control-label no-padding-right">负责项目
+                                                    </label>
+                                                    <div class="col-sm-6">
+                                                        <textarea name="project" class="form-control" id="project"></textarea>
+                                                   </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="username" class="col-sm-2 control-label no-padding-right">教授课程
+                                                    </label>
+                                                    <div class="col-sm-6">
+                                                        <textarea name="course" class="form-control" id="course"></textarea>
+                                                   </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="col-sm-offset-2 col-sm-10">
+                                                        <button type="submit" class="btn btn-default">保存信息</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Page Body -->
+                </div>
+                <!-- /Page Content -->
+    		</div>	
+    	</div>
+
+    	    <!--Basic Scripts-->
+        <script src="__PUBLIC__/style/jquery_002.js"></script>
+        <script src="__PUBLIC__/style/bootstrap.js"></script>
+        <script src="__PUBLIC__/style/jquery.js"></script>
+        <!--Beyond Scripts-->
+        <script src="__PUBLIC__/style/beyond.js"></script>
+        <script type="text/javascript">
+            //实例化编辑器
+            //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+            UE.getEditor('resume',{initialFrameWidth:600,initialFrameHeight:200,});
+        </script>
+    </body>
+</html>

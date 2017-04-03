@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$catename.catename}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/style/base.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/style/style.css">
+<script language="JavaScript" src="__PUBLIC__/images/config.js"></script>
+<script language="JavaScript" src="__PUBLIC__/images/js/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="__PUBLIC__/images/js/css.js"></script>
+<script language="JavaScript" src="__PUBLIC__/images/js/common.js"></script>
+<script language="JavaScript" src="__PUBLIC__/images/js/login.js"></script>
+<script language="JavaScript" src="__PUBLIC__/images/js/jquery-validate.js"></script>
+</head>
+<body>
+
+{include file="common/header"/}
+
+<div class="mid">
+    <div class="left">
+      <div class="lmune">
+        <div class="title"><a href="javascript:void(0)">{$catename.catename}</a></div>
+         <div class="mulist">
+        	<ul>
+          {volist name="direction" id="vo"}
+            <li><a href="###">{$vo.title}</a></li>
+            {/volist}
+           </ul>
+         </div>
+      </div>
+     </div>
+    
+    <div class="minh"></div>
+    
+    <div class="right">
+  <div id="content">
+      {volist name="direction" id="vo"}
+      <div style="padding:10px; font-size:20px;">
+      {$vo.title}
+      </div>
+      <div>
+      {$vo.content}
+      </div>
+      {/volist}
+  </div>
+
+    </div>
+    <div class="clf"></div>
+  </div>
+
+{include file="common/foot"/}
+</body>
+</html>

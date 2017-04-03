@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$catename.catename}</title>
+
+<link href="__PUBLIC__/style/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/style/base.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/style/style.css">
+
+<script language="JavaScript" src="__PUBLIC__/images/config.js"></script>
+<script language="JavaScript" src="__PUBLIC__/images/js/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="__PUBLIC__/images/js/css.js"></script>
+<script language="JavaScript" src="__PUBLIC__/images/js/common.js"></script>
+<script language="JavaScript" src="__PUBLIC__/images/js/login.js"></script>
+<script language="JavaScript" src="__PUBLIC__/images/js/jquery-validate.js"></script>
+</head>
+<body>
+
+{include file="common/header"/}
+
+<div class="mid">
+    <div class="left">
+      <div class="lmune">
+        <div class="title"><a href="javascript:void(0)">相关图片</a></div>
+         <div class="mulist">
+            <ul>
+                {volist name="good_article" id="vo"}
+                {if condition="$vo['pic'] neq ''"}
+                <li style="text-align:center;"><a href="{:url('show/index',array('artid'=>$vo['id']))}" target="_blank"><img src="__IMG__{$vo.pic}" width="200" height="150" alt="{$vo.title}" /></a><br /><a href="{:url('show/index',array('artid'=>$vo['id']))}" target="_blank">{$vo.title}</a></li>
+                {/if}
+                {/volist}   
+            </ul>
+         </div>
+      </div>
+    </div>
+    
+    <div class="minh"></div>  
+    <div class="right">
+       <div class="catname">{$catename.catename}</div>
+        <div id="content">
+          <div class="mar_10">
+            <ul class="text_list text_list_f14">
+              {volist name="articles" id="vo"}
+              <li><span class="date">{$vo['time']|date="Y-m-d",###}</span><a href="{:url('show/index',array('artid'=>$vo['id']))}" target="_blank" title="{$vo.title}">{$vo.title}</a>
+              </li>
+              {/volist}
+            </ul>
+          </div>
+          <div style="text-align:right; margin-top:10px">
+                  {$articles->render()} 
+          </div>
+       </div>
+  </div>
+    <div class="clf"></div>
+</div>
+
+{include file="common/foot"/}
+</body>
+</html>
+
